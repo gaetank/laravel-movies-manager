@@ -13,6 +13,10 @@
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/movies/create', 'MovieController@create');
+});
+
 Route::get('/', ['as' => 'home', function () {
     return redirect(route('movies.home'));
 }]);
