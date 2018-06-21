@@ -2,11 +2,30 @@
 
 Route::prefix('movies')->group(function () {
     Route::get('/', ['as' => 'movies.home', function () {
-        return View('movies.home');
+        $faker = Faker\Factory::create('fr_FR');
+        $movies = [];
+        for ($i = 0; $i < 10; $i++){
+            $movies[] = (object)[
+                'title' => $faker->sentence(3),
+                'description' => $faker->realText($faker->numberBetween(50, 100)),
+                'imageUrl' => $faker->imageUrl(700, 400),
+                'price' => $faker->biasedNumberBetween(2.50,11)
+            ];
+        }
+        return View('movies.home')->with([
+            'movies' => $movies
+        ]);
     }]);
 
     Route::get('/{id}', ['as' => 'movies.show', function ($id) {
-        return View('movies.show');
+        $faker = Faker\Factory::create('fr_FR');
+        $movie = (object)[
+            'title' => $faker->sentence(3),
+            'description' => $faker->realText($faker->numberBetween(50, 100)),
+            'imageUrl' => $faker->imageUrl(750, 500),
+            'price' => $faker->biasedNumberBetween(2.50,11)
+        ];
+        return View('movies.show')->with(['movie' => $movie]);
     }])->where('id', '[0-9]+');
 
     Route::get('/form', ['as' => 'movies.form', function () {
