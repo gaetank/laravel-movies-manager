@@ -14,6 +14,8 @@
     <!-- Bootstrap core CSS -->
     {!! Html::style('https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css') !!}
     {!! Html::style('https://blackrockdigital.github.io/startbootstrap-shop-homepage/css/shop-homepage.css') !!}
+    {!! Html::style('css/movies.css') !!}
+    @yield('styles')
   </head>
 
   <body>
@@ -21,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Movies Manager</a>
+        <a class="navbar-brand" href="{{ route('home') }}">Movies Manager</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,8 +49,10 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
-      @yield('content')
+    <div id="fade">
+      <div class="container">
+        @yield('content')
+      </div>
     </div>
     <!-- /.container -->
 
@@ -63,5 +67,6 @@
     <!-- Bootstrap core JavaScript -->
     {!! Html::script('https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/jquery/jquery.min.js') !!}
     {!! Html::script('https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/js/bootstrap.bundle.min.js') !!}
+    @yield('scripts')
   </body>
 </html>
