@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'home', function () {
+    return redirect(route('movies.home'));
+}]);
+
+require_once "core/movies.php";
