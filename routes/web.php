@@ -11,6 +11,8 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', ['as' => 'home', function () {
     return redirect(route('movies.home'));
 }]);
