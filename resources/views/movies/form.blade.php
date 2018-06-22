@@ -28,16 +28,16 @@
         <input type="text" class="form-control" name="trailer" placeholder="http://www.trailers.com" value="http://youtube.com" />
     </div>
 
-    <div class="form-group">
-        <label for="realisator">Réalisateur</label>
-        <select id="realisators" name="realisators">
-            @if(!empty($realisators) && count($realisators) > 0)
+    @if(!empty($realisators) && count($realisators) > 0)
+        <div class="form-group">
+            <label for="realisator">Réalisateur</label>
+            <select id="realisators" name="realisators">
                 @foreach($realisators as $realisator)
                     <option value="{{ $realisator->id }}">{{ $realisator->firstname }} {{ $realisator->lastname }}</option>
                 @endforeach
-            @endif
-        </select>
-    </div>
+            </select>
+        </div>
+    @endif
 
     <button class="btn btn-primary">Enregistrer</button>
     

@@ -21,6 +21,10 @@ Route::get('/', ['as' => 'home', function () {
     return redirect(route('movies.home'));
 }]);
 
+Route::get('/home', ['as' => 'home', function () {
+    return redirect(route('movies.home'));
+}]);
+
 Route::get('/form', ['as' => 'form', function (){
     return redirect(route('movies.form'));
 }]);
