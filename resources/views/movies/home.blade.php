@@ -46,14 +46,14 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
                             <a href="{{ route('movies.show', ["id" => $movie->id]) }}">
-                                <img class="card-img-top" src="{{ $movie->imageUrl }}" alt="">
+                                <img class="card-img-top" src="{{ asset($movie->image) }}" style="height: 150px" alt="">
                             </a>
                             
                             <div class="card-body">
                                 <h4 class="card-title">
                                 <a href="{{ route('movies.show', ["id" => $movie->id]) }}">{{ $movie->title }}</a>
                                 </h4>
-                                <h5>{{ $movie->price }}&#x20AC;</h5>
+                                <h5>{{ $movie->prix }}&#x20AC;</h5>
                                 <p class="card-text">
                                     {{ $movie->description }}
                                 </p>

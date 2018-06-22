@@ -15,4 +15,9 @@ class Realisator extends Model
     public function movies() {
         return $this->hasMany(Movie::class);
     }
+
+    // public function __toString()
+    // {
+    //     return $this->firstname + ' ' + $this->lastname;
+    // }
 }

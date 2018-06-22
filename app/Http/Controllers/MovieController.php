@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
     public function show() {
-        $realisators = App\Realisator::all();
+        $realisators = Realisator::all();
         return view('movies.form')->with(['realisators' => $realisators]);
     }
 
@@ -20,9 +20,10 @@ class MovieController extends Controller
             'prix' => 'required',
             'image' => 'required'
         ]);
+
         $path = '';
         if ($request->file('image') !== NULL) {
-            $path = $request->file('image')->store('public');
+            $path = $request->file('image')->store('images');
         }    
         //dd($request->all());
         $movie = Movie::create([
@@ -34,9 +35,10 @@ class MovieController extends Controller
             'realisator_id' => intval(request('realisators')),
         ]);
     
-        return response()->json([
-            'Movie'    => $movie,
-            'message' => 'Success'
-        ], 200);
+        // return response()->json([
+        //     'Movie'    => $movie,
+        //     'message' => 'Success'
+        // ], 200);
+        return redirect(route('home'));
     }
 }

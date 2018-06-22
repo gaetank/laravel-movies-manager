@@ -5,15 +5,16 @@
       <!-- Portfolio Item Row -->
       <div class="row">
         <div class="thumbnail-container">
-          <img src="{{ $movie->imageUrl }}" alt="Avatar" class="thumbnail image" style="width:100%">
+          <!-- <img src="<?php echo asset("storage/app/$movie->image")?>" alt="Avatar" class="thumbnail image" style="width:100%"> -->
+          <img src="<?php echo asset($movie->image)?>" alt="Avatar" class="thumbnail image" style="width:100%">
           <div class="middle">
             <a href="#" class="text">
               <span class="icon-play"></span>
-              Acheter dès 13.99&#x20AC;
+              Acheter dès {{ $movie->prix }}&#x20AC;
             </a>
             <a href="#" class="text">
               <span class="icon-play"></span>
-              Louer dès 2.99&#x20AC;
+              Louer dès {{ $movie->prix * 0.25 }}&#x20AC;
             </a>
           </div>
         </div>
@@ -27,7 +28,7 @@
           <div class="description-categories">
             <div class="description">
                 <div class="casting">
-                  De:&nbsp;<a href="#">Ryan Coogler</a><br />
+                  De:&nbsp;<a href="#">Tim Burton</a><br />
                   <div class="actors">
                     <span>Avec:&nbsp;</span>
                     <ul>
