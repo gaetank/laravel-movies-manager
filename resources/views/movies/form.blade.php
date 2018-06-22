@@ -1,7 +1,20 @@
 @extends('layout')
 
 @section('content')
-    <form action="/movies" method="post" enctype="multipart/form-data">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>
+            Oops, we are unable to save your movie because of the following error(s):
+            <ul class="list-unstyled">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        <strong>
+    </div>
+    @endif    
+
+<form action="/movies" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group">
         <label for="title">Titre</label>
