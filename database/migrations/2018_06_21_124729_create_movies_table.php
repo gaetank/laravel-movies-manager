@@ -52,8 +52,6 @@ class CreateMoviesTable extends Migration
             $table->foreign('id_movies')->references('id')->on('movies');
             $table->timestamps();
         });
-        
-        
     }
 
     /**
