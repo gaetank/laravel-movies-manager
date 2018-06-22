@@ -1,11 +1,137 @@
+.btn-action,
+.btn-action:hover {
+    border-radius: 50%;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: rgb(52, 58, 64);
+    border-color: rgb(52, 58, 64);
+}
+
+.icon-play {
+    width: auto;
+    height: auto;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+    display: inline-block;
+    margin-right: 15px;
+}
+
 #fade {
     background: url('http://www.lemediaplus.com/wp-content/uploads/2016/01/Cinema2.jpg');
 }
 
-#fade > .container {
+#fade>.container {
     background-color: white;
 }
 
 .card-footer .btn-primary {
     float: right;
+}
+
+#show .thumbnail {
+    width: 100%;
+    height: 400px;
+}
+
+#show h1 small {
+    display: block;
+    font-size: 20px;
+}
+
+#show #detail {
+    padding: 10px 30px;
+}
+
+#show .description-categories {
+    display: flex;
+    justify-content: space-between;
+}
+
+#show .description {
+    max-width: 50%;
+}
+
+#show .categories {
+    text-align: right;
+}
+
+#show .categories ul,
+#show .casting ul {
+    list-style: none;
+}
+
+#show .categories ul a,
+#show .casting a {
+    color: unset;
+    font-weight: 600;
+}
+
+#show .casting .actors {
+    display: flex;
+}
+
+#show .casting ul {
+    padding: 0;
+}
+
+#show .casting ul li {
+    float: left;
+}
+
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.thumbnail-container:hover .middle {
+    opacity: 1;
+}
+
+.text,
+.text:hover {
+    text-decoration: none;
+    background-color: rgba(52, 58, 64, 0.9);
+    transition: background-color 0.2s ease-in;
+    color: white;
+    font-size: 22px;
+    padding: 15px;
+    display: block;
+    margin: 15px 0;
+    width: 400px;
+    height: 60px;
+}
+
+.text:hover {
+    background-color: rgba(52, 58, 64, 1);
+}
+
+.modal-dialog {
+    max-width: none;
+    width: 65%;
+    /* height: 0px; */
 }
