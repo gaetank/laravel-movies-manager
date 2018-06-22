@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
     public function show() {
-        $realisators = App\Realisator::all();
+        $realisators = Realisator::all();
         return view('movies.form')->with(['realisators' => $realisators]);
     }
 
