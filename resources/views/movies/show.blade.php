@@ -47,7 +47,7 @@
             <div class="categories">
                 <div>
                     <button class="btn btn-success btn-action video" 
-                          data-video="https://www.youtube.com/embed/tgbNymZ7vqY" 
+                          data-video="{{ $movie->trailer }}" 
                           data-toggle="modal" 
                           data-target="#videoModal">
                       BA

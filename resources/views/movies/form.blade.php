@@ -14,8 +14,10 @@
     </div>
     @endif    
 
-<form action="/movies" method="post" enctype="multipart/form-data">
+<form action="{{ route('movies.postform') }}" method="post" enctype="multipart/form-data">
+
     {{ csrf_field() }}
+
     <div class="form-group">
         <label for="title">Titre</label>
         <input type="text" name="title" class="form-control" placeholder="Le roi lion" />

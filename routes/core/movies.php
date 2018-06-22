@@ -19,4 +19,6 @@ Route::prefix('movies')->group(function () {
     Route::get('/form', ['as' => 'movies.form', function () {
         return View('movies.form');
     }]);
+
+    Route::post('/form', ['as' => 'movies.postform', 'uses' => 'MovieController@store']);
 });
