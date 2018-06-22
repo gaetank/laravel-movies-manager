@@ -21,8 +21,8 @@ Route::prefix('movies')->group(function () {
         $faker = Faker\Factory::create('fr_FR');
         $movie = (object)[
             'title' => $faker->sentence(3),
-            'description' => $faker->realText($faker->numberBetween(50, 100)),
-            'imageUrl' => $faker->imageUrl(750, 500),
+            'description' => $faker->realText($faker->numberBetween(500, 1000)),
+            'imageUrl' => $faker->imageUrl(1000, 400),
             'price' => $faker->biasedNumberBetween(2.50,11)
         ];
         return View('movies.show')->with(['movie' => $movie]);

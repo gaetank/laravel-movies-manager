@@ -2,37 +2,73 @@
 
 @section('content')
     <section id="show">
-      <h1 class="my-4">
-        {{ $movie->title }}
-        <!-- <small>Secondary Text</small> -->
-      </h1>
-
       <!-- Portfolio Item Row -->
       <div class="row">
-        <div class="col-md-8">
-          <img class="img-fluid" src="{{ $movie->imageUrl }}" alt="">
+        <div class="thumbnail-container">
+          <img src="{{ $movie->imageUrl }}" alt="Avatar" class="thumbnail image" style="width:100%">
+          <div class="middle">
+            <a href="#" class="text">
+              <span class="icon-play"></span>
+              Acheter dès 13.99&#x20AC;
+            </a>
+            <a href="#" class="text">
+              <span class="icon-play"></span>
+              Louer dès 2.99&#x20AC;
+            </a>
+          </div>
         </div>
 
-        <div class="col-md-4">
-            <h3 class="my-3">Synopsis</h3>
-            <p>{{ $movie->description }}</p>
-            
-            <h3 class="my-3">Project Details</h3>
-            <ul>
-                <li>Lorem Ipsum</li>
-                <li>Dolor Sit Amet</li>
-                <li>Consectetur</li>
-                <li>Adipiscing Elit</li>
-            </ul>
+        <div id="detail">
+          <h1>
+            {{ $movie->title }}
+            <small>Action - Aventure - États-Unis - 2018 - 2h15</small>
+          </h1>
+
+          <div class="description-categories">
+            <div class="description">
+                <h3 class="my-3">Synopsis</h3>
+                <p>{{ $movie->description }}</p>
+              
+            </div>
+
+            <div class="categories">
+                <div>
+                    <button class="btn btn-success btn-action video" 
+                          data-video="https://www.youtube.com/embed/tgbNymZ7vqY" 
+                          data-toggle="modal" 
+                          data-target="#videoModal">
+                      BA
+                    </button>
+                </div>
+
+                <h3 class="my-3">Catégories</h3>
+                <ul>
+                    <li><a href="#">Disney</a></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Horeur</a></li>
+                    <li><a href="#">Aventure</a></li>
+                    <li><a href="#">Famille</a></li>
+                </ul>
+            </div>
+          </div>
         </div>
       </div>
       <!-- /.row -->
 
-      <iframe width="750" height="400" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <iframe width="100%" height="550" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Related Projects Row -->
       <section>
-        <h3 class="my-4">Dans le même genre ...</h3>
+        <h3 class="my-4">A voir également</h3>
   
         <div class="row">
           <div class="col-md-3 col-sm-6 mb-4">
@@ -61,4 +97,22 @@
         </div>
       </section>
     </section>
+@endsection
+
+@section('scripts')
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+      $(".video").click(function () {
+        var theModal = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function () {
+          $(theModal + ' iframe').attr('src', videoSRC);
+        });
+      });
+    });
+  </script>
 @endsection

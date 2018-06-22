@@ -1,15 +1,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-
+    <title>Movies Manager</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="">    
 
-    <title>Movies Manager</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
 
     <!-- Bootstrap core CSS -->
     {!! Html::style('https://blackrockdigital.github.io/startbootstrap-shop-homepage/vendor/bootstrap/css/bootstrap.min.css') !!}
