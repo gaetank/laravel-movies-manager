@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Movie;
 use App\Realisator;
 use Illuminate\Http\Request;
@@ -8,7 +9,7 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
     public function show() {
-        $realisators = Realisator::all();
+        $realisators = App\Realisator::all();
         return view('movies.form')->with(['realisators' => $realisators]);
     }
 
@@ -17,8 +18,7 @@ class MovieController extends Controller
             'title'        => 'required|max:255',
             'description' => 'required',
             'prix' => 'required',
-            'image' => 'required',
-            
+            'image' => 'required'
         ]);
         $path = '';
         if ($request->file('image') !== NULL) {

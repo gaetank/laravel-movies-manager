@@ -21,10 +21,12 @@ Route::get('/', ['as' => 'home', function () {
     return redirect(route('movies.home'));
 }]);
 
+Route::get('/home', ['as' => 'home', function () {
+    return redirect(route('movies.home'));
+}]);
+
 Route::get('/form', ['as' => 'form', function (){
     return redirect(route('movies.form'));
 }]);
-
-Route::resource('/movies', 'MovieController');
 
 require_once "core/movies.php";

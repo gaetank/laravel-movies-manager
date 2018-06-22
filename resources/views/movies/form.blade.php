@@ -2,8 +2,10 @@
 
 @section('content') 
 
-<form action="/movies" method="post" enctype="multipart/form-data">
+<form action="{{ route('movies.postform') }}" method="post" enctype="multipart/form-data">
+
     {{ csrf_field() }}
+
     <div class="form-group">
         <label for="title">Titre</label>
         <input type="text" name="title" class="form-control" placeholder="Le roi lion" />
@@ -44,14 +46,16 @@
         @endif
     </div>
 
-    <div class="form-group">
-        <label for="realisators">Réalisateur</label>
-        <select id="realisators" name="realisators">
-            @foreach($realisators as $realisator)
-                <option value="{{ $realisator->id }}">{{ $realisator->firstname }} {{ $realisator->lastname }}</option>
-            @endforeach
-        </select>
-    </div>
+    @if(!empty($realisators) && count($realisators) > 0)
+        <div class="form-group">
+            <label for="realisators">Réalisateur</label>
+            <select id="realisators" name="realisators">
+                @foreach($realisators as $realisator)
+                    <option value="{{ $realisator->id }}">{{ $realisator->firstname }} {{ $realisator->lastname }}</option>
+                @endforeach
+            </select>
+        </div>
+    @endif
 
     <button class="btn btn-primary">Enregistrer</button>
     
