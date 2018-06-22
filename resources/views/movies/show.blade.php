@@ -26,9 +26,22 @@
 
           <div class="description-categories">
             <div class="description">
-                <h3 class="my-3">Synopsis</h3>
+                <div class="casting">
+                  De:&nbsp;<a href="#">Ryan Coogler</a><br />
+                  <div class="actors">
+                    <span>Avec:&nbsp;</span>
+                    <ul>
+                      <li><a href="#">Chadwick Boseman</a>,&nbsp;</li>
+                      <li><a href="#">Michael B Jordan</a>,&nbsp;</li>
+                      <li><a href="#">Martin Freeman</a>,&nbsp;</li>
+                      <li><a href="#">Lupita Nyong'o</a>,&nbsp;</li>
+                      <li><a href="#">Danai Jesekai Gurira</a>,&nbsp;</li>
+                      <li><a href="#">Letitia Wright</a></li>
+                    </ul>
+                  </div>
+                </div>
+
                 <p>{{ $movie->description }}</p>
-              
             </div>
 
             <div class="categories">

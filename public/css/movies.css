@@ -58,13 +58,27 @@
     text-align: right;
 }
 
-#show .categories ul {
+#show .categories ul,
+#show .casting ul {
     list-style: none;
 }
 
-#show .categories ul a {
+#show .categories ul a,
+#show .casting a {
     color: unset;
     font-weight: 600;
+}
+
+#show .casting .actors {
+    display: flex;
+}
+
+#show .casting ul {
+    padding: 0;
+}
+
+#show .casting ul li {
+    float: left;
 }
 
 .thumbnail-container {
