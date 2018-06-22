@@ -11,6 +11,15 @@ class Movie extends Model
         'description',
         'image',
         'prix',
-        'trailer'
+        'trailer',
+        'realisator_id'
     ];
+
+    public function categories() {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function realisator() {
+        return $this->hasOne(Realisator::class);
+    }
 }

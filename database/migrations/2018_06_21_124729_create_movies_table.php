@@ -21,7 +21,7 @@ class CreateMoviesTable extends Migration
             $table->timestamps();
         });
         
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
@@ -37,21 +37,7 @@ class CreateMoviesTable extends Migration
             $table->timestamps();
         });
         
-        Schema::create('ass_realisator_movies', function (Blueprint $table) {
-            $table->unsignedInteger('id_realisator');
-            $table->unsignedInteger('id_movies');
-            $table->foreign('realisator_id')->references('id')->on('realisators');
-            $table->foreign('id_movies')->references('id')->on('movies');
-            $table->timestamps();
-        });
         
-        Schema::create('ass_category_movies', function (Blueprint $table) {
-            $table->unsignedInteger('id_category');
-            $table->unsignedInteger('id_movies');
-            $table->foreign('id_category')->references('id')->on('category');
-            $table->foreign('id_movies')->references('id')->on('movies');
-            $table->timestamps();
-        });
     }
 
     /**
@@ -64,7 +50,5 @@ class CreateMoviesTable extends Migration
         Schema::dropIfExists('realisators');
         Schema::dropIfExists('category');
         Schema::dropIfExists('movies');
-        Schema::dropIfExists('ass_category_movies');
-        Schema::dropIfExists('ass_realisator_movies');
     }
 }
