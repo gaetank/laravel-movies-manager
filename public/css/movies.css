@@ -1,0 +1,11 @@
+#fade {
+    background: url('http://www.lemediaplus.com/wp-content/uploads/2016/01/Cinema2.jpg');
+}
+
+#fade > .container {
+    background-color: white;
+}
+
+.card-footer .btn-primary {
+    float: right;
+}
