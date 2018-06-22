@@ -22,7 +22,7 @@ class MovieController extends Controller
         ]);
         $path = '';
         if ($request->file('image') !== NULL) {
-            $path = $request->file('image')->store('public');
+            $path = $request->file('image')->store('public/images');
         }    
         //dd($request->all());
         $movie = Movie::create([
