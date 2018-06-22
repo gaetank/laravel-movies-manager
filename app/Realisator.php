@@ -11,4 +11,8 @@ class Realisator extends Model
         'lastname',
         'age'
     ];
+
+    public function movies() {
+        return $this->hasMany(Movie::class);
+    }
 }
