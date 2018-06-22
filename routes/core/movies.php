@@ -16,9 +16,7 @@ Route::prefix('movies')->group(function () {
         return View('movies.show')->with(['movie' => $movie]);
     }])->where('id', '[0-9]+');
 
-    Route::get('/form', ['as' => 'movies.form', function () {
-        return View('movies.form');
-    }]);
+    Route::get('/form', ['as' => 'movies.form', 'uses' => 'MovieController@show']);
 
     Route::post('/form', ['as' => 'movies.postform', 'uses' => 'MovieController@store']);
 });
