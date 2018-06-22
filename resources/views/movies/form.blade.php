@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="/movies" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group">
         <label for="title">Titre</label>
@@ -20,12 +20,21 @@
 
     <div class="form-group">
         <label for="price">Prix</label>
-        <input type="number" class="form-control" name="price" />
+        <input type="number" class="form-control" name="prix" />
     </div>
 
     <div class="form-group">
         <label for="trailer">Trailer</label>
-        <input type="text" class="form-control" name="trailer" placeholder="http://www.trailers.com" />
+        <input type="text" class="form-control" name="trailer" placeholder="http://www.trailers.com" value="http://youtube.com" />
+    </div>
+
+    <div class="form-group">
+        <label for="realisator">Réalisateur</label>
+        <select id="realisators" name="realisators">
+            @foreach($realisators as $realisator)
+                <option value="{{ $realisator->id }}">{{ $realisator->firstname }} {{ $realisator->lastname }}</option>
+            @endforeach
+        </select>
     </div>
 
     <button class="btn btn-primary">Enregistrer</button>

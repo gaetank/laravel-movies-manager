@@ -11,7 +11,8 @@ class Movie extends Model
         'description',
         'image',
         'prix',
-        'trailer'
+        'trailer',
+        'realisator_id'
     ];
 
     public function categories() {

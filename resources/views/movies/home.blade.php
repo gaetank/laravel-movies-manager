@@ -7,7 +7,7 @@
             <div class="list-group">
                 <a href="#" class="list-group-item">Action</a>
                 <a href="#" class="list-group-item">Comédie</a>
-                <a href="#" class="list-group-item">Horeur</a>
+                <a href="#" class="list-group-item">Horreur</a>
             </div>
         </div>
 
