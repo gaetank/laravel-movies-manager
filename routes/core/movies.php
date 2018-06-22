@@ -1,17 +1,21 @@
 <?php
 
+use App\Movie;
+
 Route::prefix('movies')->group(function () {
     Route::get('/', ['as' => 'movies.home', function () {
-        $faker = Faker\Factory::create('fr_FR');
-        $movies = [];
-        for ($i = 0; $i < 10; $i++){
-            $movies[] = (object)[
-                'title' => $faker->sentence(3),
-                'description' => $faker->realText($faker->numberBetween(50, 100)),
-                'imageUrl' => $faker->imageUrl(700, 400),
-                'price' => $faker->biasedNumberBetween(2.50,11)
-            ];
-        }
+        // $faker = Faker\Factory::create('fr_FR');
+        // $movies = [];
+        // for ($i = 0; $i < 10; $i++){
+        //     $movies[] = (object)[
+        //         'title' => $faker->sentence(3),
+        //         'description' => $faker->realText($faker->numberBetween(50, 100)),
+        //         'imageUrl' => $faker->imageUrl(700, 400),
+        //         'price' => $faker->biasedNumberBetween(2.50,11)
+        //     ];
+        // }
+        $movies = Movie::all();
+        
         return View('movies.home')->with([
             'movies' => $movies
         ]);

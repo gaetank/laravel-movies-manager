@@ -45,13 +45,13 @@
                 @foreach ($movies as $movie)
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="{{ route('movies.show', ["id" => $movie->price]) }}">
+                            <a href="{{ route('movies.show', ["id" => $movie->id]) }}">
                                 <img class="card-img-top" src="{{ $movie->imageUrl }}" alt="">
                             </a>
                             
                             <div class="card-body">
                                 <h4 class="card-title">
-                                <a href="{{ route('movies.show', ["id" => $movie->price]) }}">{{ $movie->title }}</a>
+                                <a href="{{ route('movies.show', ["id" => $movie->id]) }}">{{ $movie->title }}</a>
                                 </h4>
                                 <h5>{{ $movie->price }}&#x20AC;</h5>
                                 <p class="card-text">
@@ -63,7 +63,7 @@
                                 <small class="text-muted">
                                     &#9733; &#9733; &#9733; &#9733; &#9734;
                                 </small>
-                                <button class="btn btn-primary" href="{{ route('movies.show', ["id" => $movie->price]) }}">Purchase</button>
+                                <button class="btn btn-primary" href="{{ route('movies.show', ["id" => $movie->id]) }}">Purchase</button>
                             </div>
                         </div>
                     </div>
