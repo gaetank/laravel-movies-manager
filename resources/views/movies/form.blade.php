@@ -31,9 +31,11 @@
     <div class="form-group">
         <label for="realisator">Réalisateur</label>
         <select id="realisators" name="realisators">
-            @foreach($realisators as $realisator)
-                <option value="{{ $realisator->id }}">{{ $realisator->firstname }} {{ $realisator->lastname }}</option>
-            @endforeach
+            @if(!empty($realisators) && count($realisators) > 0)
+                @foreach($realisators as $realisator)
+                    <option value="{{ $realisator->id }}">{{ $realisator->firstname }} {{ $realisator->lastname }}</option>
+                @endforeach
+            @endif
         </select>
     </div>
 

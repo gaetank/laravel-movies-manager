@@ -25,6 +25,4 @@ Route::get('/form', ['as' => 'form', function (){
     return redirect(route('movies.form'));
 }]);
 
-Route::resource('/movies', 'MovieController');
-
 require_once "core/movies.php";
